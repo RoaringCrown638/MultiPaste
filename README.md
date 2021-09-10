@@ -4,3 +4,4 @@ A lot of things are not set up, like how I am going to cover all laptops and OSs
 
 To use just download and unzip the file and choose where you would want to put the files. "MultiPasteMain.py" is the main file and "Copy.py" is the file that deals with copying multiple things to another file called "pasteList". Unfortunately I do not yet know how to make the code flexible enough to just detect which folder things are in.
 In the "MultiPasteMain.bat" file in the first double quotations input where the pythonw.exe or pythonw3.9.exe is and in the second quotations input where the file "MultiPasteMain.py is. Same for the other two corresponding files for "Copy".
+In both the ".py" extension files fill in the quotes next to "directory" with the dirctory you want the pasteList to be. You will have to create a file (not necessarily named "psateList") for this if it doesnt exist. It can have no extension or if you prefer create a txt file.
