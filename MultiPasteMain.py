@@ -10,6 +10,8 @@ import multiprocessing
 
 copiedList = []
 
+directory = ""
+
 def choosePaste(event):
     if pasteList.get(ANCHOR):
         selection = pasteList.get(ANCHOR)
@@ -18,15 +20,15 @@ def choosePaste(event):
         
 
 def deleteAllButtonCom():
-    open("D:\\Residual Information\\pasteList", 'w').close()
+    open(directory, 'w').close()
     pasteList.delete(0, tkinter.END)
     pasteList.insert(tkinter.END, "")
 
 
 def deleteButtonCom():
-    with open("D:\\Residual Information\\pasteList", 'r') as f:
+    with open(directory, 'r') as f:
         lines = f.readlines()
-    with open("D:\\Residual Information\\pasteList", 'w') as f:
+    with open(directory, 'w') as f:
         for line in lines:
             if line == pasteList.get(ANCHOR):
                 continue
@@ -37,7 +39,7 @@ def deleteButtonCom():
 
 def refreshButtonCom():
     pasteList.delete(0, tkinter.END)
-    with open("D:\\Residual Information\\pasteList", 'r') as file:
+    with open(directory, 'r') as file:
         for pastes in file.readlines():
             pasteList.insert(tkinter.END, pastes)
             
@@ -62,7 +64,7 @@ while True:
         pasteList = tkinter.Listbox(pasteWindow, height=13, width=39, font=("Aerial", '10'))
         pasteList.place(x=5, y=35)
 
-        with open("D:\\Residual Information\\pasteList", 'r') as file:
+        with open(directory, 'r') as file:
             for pastes in file.readlines():
                 pasteList.insert(tkinter.END, pastes)
 
